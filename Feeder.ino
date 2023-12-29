@@ -81,7 +81,7 @@ void feedpet(int petNumber) {
   myServo.write(servoPosition);  // Move servo to the feeding position
 
   // Keep the servo in feeding position for 5 seconds
-  while (millis() - feed_start < 1500) {
+  while (millis() - feed_start < 1500 && scale.get_units() + 240 < pet_portion_sizes[petNumber]) {
     myServo.write(servoPosition + 8);
     delay(50);
     myServo.write(servoPosition - 8);
