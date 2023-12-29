@@ -19,15 +19,15 @@ Ultrasonic ultrasonic(TRIG_PIN, ECHO_PIN);  // Initialize the Ultrasonic sensor
 Servo myServo;  // Create a Servo object to control the servo motor
 
 // Constants for feeding times and portion sizes
-const unsigned long dog1_feedingTimes[] = {0 * 36000000, 2000, 4000};  // Scheduled feeding times for Dog 1
-const unsigned long dog2_feedingTimes[] = {0 * 36000000, 2000, 4000};  // Scheduled feeding times for Dog 2
-const int numFeedingTimes1 = 3;  // Number of feeding times for Dog 1
-const int numFeedingTimes2 = 3;  // Number of feeding times for Dog 2
+const unsigned long pet1_feedingTimes[] = {1 * 36000000, 2000, 4000};  // Scheduled feeding times for pet 1
+const unsigned long pet2_feedingTimes[] = {2 * 36000000, 2000, 4000};  // Scheduled feeding times for pet 2
+const int numFeedingTimes1 = 3;  // Number of feeding times for pet 1
+const int numFeedingTimes2 = 3;  // Number of feeding times for pet 2
 const int thresholdDistance = 30;  // Threshold distance for pet detection in cm
-const int dog_portion_sizes[] = {50, 60};  // Portion sizes for each dog
+const int pet_portion_sizes[] = {50, 60};  // Portion sizes for each pet in grams
 float calibrationFactor = -7;  // Calibration factor for the scale
-int fedDog1 = 0;  // Counter for the number of times Dog 1 has been fed
-int fedDog2 = 0;  // Counter for the number of times Dog 2 has been fed
+int fedpet1 = 0;  // Counter for the number of times pet 1 has been fed
+int fedpet2 = 0;  // Counter for the number of times pet 2 has been fed
 
 unsigned long startTime;  // To store the start time
 
@@ -42,40 +42,40 @@ void setup() {
 }
 
 bool isFeedingTime1(unsigned long currentMillis) {
-  // Check if it is feeding time for Dog 1
-  if (fedDog1 < numFeedingTimes1 && currentMillis >= dog1_feedingTimes[fedDog1]) {
+  // Check if it is feeding time for pet 1
+  if (fedpet1 < numFeedingTimes1 && currentMillis >= pet1_feedingTimes[fedpet1]) {
     return true;
   }
   return false;
 }
 
 bool isFeedingTime2(unsigned long currentMillis) {
-  // Check if it is feeding time for Dog 2
-  if (fedDog2 < numFeedingTimes2 && currentMillis >= dog2_feedingTimes[fedDog2]) {
+  // Check if it is feeding time for pet 2
+  if (fedpet2 < numFeedingTimes2 && currentMillis >= pet2_feedingTimes[fedpet2]) {
     return true;
   }
   return false;
 }
 
-void feedDog(int dogNumber) {
-  // Function to feed the specified dog
+void feedpet(int petNumber) {
+  // Function to feed the specified pet
   int servoPosition;
 
-  // Determine the servo position based on the dog number
-  if (dogNumber == 0) {
+  // Determine the servo position based on the pet number
+  if (petNumber == 0) {
     servoPosition = 50;
     if (isFeedingTime1(millis())) {
-      fedDog1++;
+      fedpet1++;
     }
   }
-  if (dogNumber == 1) {
+  if (petNumber == 1) {
     servoPosition = 127;
     if (isFeedingTime2(millis())) {
-      fedDog2++;
+      fedpet2++;
     }
   }
 
-  // Activate the servo to feed the dog
+  // Activate the servo to feed the pet
   int feed_start = millis();
 
   myServo.write(servoPosition);  // Move servo to the feeding position
@@ -89,8 +89,8 @@ void feedDog(int dogNumber) {
   }
 
   myServo.write(90);  // Return servo to neutral position
-  Serial.print("Fed Dog ");
-  Serial.println(dogNumber + 1);  // Print a message to the serial monitor
+  Serial.print("Fed pet ");
+  Serial.println(petNumber + 1);  // Print a message to the serial monitor
 }
 
 void loop() {
@@ -110,16 +110,16 @@ void loop() {
   // Send distance to the Python script via serial
   Serial.println(distance);
 
-  // Check if it's time to feed any dog
+  // Check if it's time to feed any pet
   if (isFeedingTime1(currentMillis) || isFeedingTime2(currentMillis)) {
     if (Serial.available() > 0) {
       char received = Serial.read();  // Read the incoming data from Python script
 
-      // Feed the appropriate dog based on the received character
+      // Feed the appropriate pet based on the received character
       if (received == '1') {
-        feedDog(0);  // Feed Dog 1
+        feedpet(0);  // Feed pet 1
       } else if (received == '2') {
-        feedDog(1);  // Feed Dog 2
+        feedpet(1);  // Feed pet 2
       }
 
       // Clear the serial buffer
