@@ -9,10 +9,8 @@
 
 <h3 align="left">Team Members</h3>
 - Aria Maz <br>
-- Jingjing Mao <br> 
-- Julien Pierre Chanel <br>
+- Michael Wang <br> 
 - Naser AI-Obeidat <br>
-- Rabab Azeem <br>
 <p><p>
 <br>
 
