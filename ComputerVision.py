@@ -65,10 +65,10 @@ def get_latest_distance():
 # Set up video capture
 video = cv2.VideoCapture(0)  # Initialize the webcam
 
-# Get reference images from the user
-ref_image1_path = input("Upload an image of the first pet: ")
+# Get reference images from user input
+ref_image1_path = input("Upload (drag and drop) an image of the first pet: ")
 ref_image1_base64 = encode_image_to_base64(ref_image1_path)
-ref_image2_path = input("Upload an image of the second pet: ")
+ref_image2_path = input("Upload (drag and drop) an image of the second pet: ")
 ref_image2_base64 = encode_image_to_base64(ref_image2_path)
 
 # Main loop variables
@@ -99,7 +99,7 @@ while True:
                 print(f"Distance is greater than 30 cm: {distance} cm")
 
     cv2.imshow('Frame', frame)  # Display the frame
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'):    #Press "q" to stop running the program and close the videocapture
         break
 
 video.release()  # Release the webcam
