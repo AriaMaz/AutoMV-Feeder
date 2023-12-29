@@ -26,7 +26,7 @@ def call_openai_api(ref_image1_base64, ref_image2_base64, current_image_base64):
             "role": "user",
             "content": [
                 # Instructions for the AI to follow
-                "Given two reference images of two different people, check if ONLY one of these people appears in the second image. Respond with '1' if only person 1 appears, '2' if only person 2 appears, and '0' otherwise.",
+                "Given two reference images of two different pets, check if ONLY one of these pets appears in the second image. Respond with '1' if only pet 1 appears, '2' if only pet 2 appears, and '0' otherwise.",
                 {"image": ref_image1_base64, "resize": 768},
                 {"image": ref_image2_base64, "resize": 768},
                 {"image": current_image_base64, "resize": 768}
