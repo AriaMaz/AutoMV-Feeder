@@ -1,8 +1,7 @@
 # AutoCV-Feeder
 
 <a href="https://github.com/AriaMaz">
-<a href="https://www.cucai.ca/">
-    <img src="https://github.com/AriaMaz/Motion-Based-Diagnostic-AI-for-BPD/assets/102880878/b24fd3cf-f59e-4ff2-9f3c-6c8f85ef6d83" align="right" width="221" alt="Logo">
+    <img src="https://github.com/AriaMaz/AutoCV-Feeder/assets/102880878/4f545129-994e-4df6-ac4b-9163c7b2fe3f" align="right" width="221" alt="Logo">
 </a>
 
 </a>
@@ -15,7 +14,7 @@
 <br>
 
 <h3 align="left">Project Description</h3>
-Autonomous pet feeder with adjustable feeding schedules/portions that dispenses with a maximum weight error of 6% and utilizes computer vision to detect different pets with about 96% accuracy based on an image of each pet provided by the user.
+Autonomous pet feeder with adjustable feeding schedules/portions that dispenses food with a maximum weight error of 6%. The system utilizes computer vision to detect different pets with about 96% accuracy based on an image of each pet provided by the user.
   
   <details>
 <summary><h4>Setup</h4></summary>
