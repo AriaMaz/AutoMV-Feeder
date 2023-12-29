@@ -4,7 +4,7 @@ import openai  # OpenAI's API for machine learning models
 import os  # To access environment variables
 import threading  # For concurrent execution
 import time  # For handling time-related functions
-import serial  # For serial communication with Arduino
+import serial  # For serial communication with microcontroller
 
 # Constants
 API_CALL_INTERVAL = 60 * 60 * 24 / 28800  # Time interval for API calls
@@ -38,14 +38,14 @@ def call_openai_api(ref_image1_base64, ref_image2_base64, current_image_base64):
             "messages": [prompt_message],
             "api_key": os.environ["OPENAI_API_KEY"],
             "headers": {"Openai-Version": "2020-11-07"},
-            "max_tokens": 500,
+            "max_tokens": 500,    #Can be varried based on the amount of time you want to run the vision model and the amount of API tokens you want to use
         }
 
         result = openai.ChatCompletion.create(**params)
         api_response = result.choices[0].message.content.strip()
         print(api_response)
 
-        # Send data to Arduino
+        # Send data to microcontroller through serial monitor
         ser.write(api_response.encode('utf-8'))
 
     except Exception as e:
