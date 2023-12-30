@@ -89,7 +89,7 @@ void feedpet(int petNumber) {
   }
 
   myServo.write(90);  // Return servo to neutral position
-  Serial.print("Fed pet ");
+  Serial.print("Fed pet");
   Serial.println(petNumber + 1);  // Print a message to the serial monitor
 }
 
