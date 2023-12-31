@@ -14,7 +14,7 @@
 <br>
 
 <h3 align="left">Project Description</h3>
-Autonomous pet feeder with adjustable feeding schedules/portions that dispenses food with a maximum weight error of 6%. The system utilizes computer vision to detect different pets with about 96% accuracy based on an image of each pet provided by the user.
+Autonomous pet feeder with adjustable feeding schedules/portions that dispenses food with a maximum weight error of 3%. The system utilizes computer vision to detect different pets with about 96% accuracy based on an image of each pet provided by the user.
   
   <details>
 <summary><h4>Setup</h4></summary>
