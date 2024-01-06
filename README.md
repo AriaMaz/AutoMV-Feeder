@@ -1,7 +1,7 @@
 # AutoCV-Feeder
 
 <a href="https://github.com/AriaMaz">
-    <img src="![AutoCVFeeder](https://github.com/AriaMaz/AutoCV-Feeder/assets/102880878/47c328c5-fc31-444d-a67c-2a35b40ae5e5)" align="right" width="221" alt="Logo">
+    <img src="https://github.com/AriaMaz/AutoCV-Feeder/assets/102880878/47c328c5-fc31-444d-a67c-2a35b40ae5e5" align="right" width="221" alt="Logo">
 </a>
 
 </a>
