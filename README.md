@@ -40,7 +40,7 @@ To use this model, it is recommended to run the following command in your termin
 ```
   </details>
 
-<h3 align="middle">Click on the image below to download the Conceptual Design Report for this project</h3>
+<h3 align="center">Click on the image below to download the Conceptual Design Report for this project</h3>
 <div align="center">
     <a href="https://github.com/AriaMaz/AutoCV-Feeder/files/13792210/AutoCVFConseptualDesignReport.pdf">
         <img src="https://github.com/AriaMaz/AutoCV-Feeder/assets/102880878/04036711-16f3-4a5e-beeb-06f84ab2e938" width="50%" alt="PDF Preview">
