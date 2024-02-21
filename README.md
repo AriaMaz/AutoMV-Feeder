@@ -6,7 +6,6 @@
 
 </a>
 
-<h3 align="left">Team Members</h3>
 Aria Maz <br>
 Michael Wang <br> 
 Naser AI-Obeidat <br>
