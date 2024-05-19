@@ -11,7 +11,8 @@ Naser AI-Obeidat <br>
 <br>
 
 <h3 align="left">Project Description</h3>
-Autonomous pet feeder with adjustable foods, portion sizes, and feeding times that dispenses food with a maximum weight error of 4%. Detects pets with a 98% accuracy using a camera, MV Python script, and 1 image of each pet uploaded by the user.
+Autonomous pet feeder with adjustable foods, portion sizes, and feeding times that dispenses food with a maximum weight error of 4%. <br>
+- Detects pets with a 98% accuracy using a camera, MV Python script, and 1 image of each pet uploaded by the user.
   
 <p></p>
 <details>
